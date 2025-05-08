@@ -1,0 +1,25 @@
+<h2>Ajouter un courrier</h2>
+<form (ngSubmit)="enregistrer()">
+  <label>Type:</label>
+  <select [(ngModel)]="type" name="type">
+    <option value="entrant">Entrant</option>
+    <option value="sortant">Sortant</option>
+  </select><br/>
+
+  <label>Date:</label>
+  <input type="date" [(ngModel)]="date" name="date"><br/>
+
+  <label>Objet:</label>
+  <input type="text" [(ngModel)]="objet" name="objet"><br/>
+
+  <label>Service:</label>
+  <input type="text" [(ngModel)]="service" name="service"><br/>
+
+  <label>{{ type === 'entrant' ? 'Expéditeur' : 'Destinataire' }}:</label>
+  <input type="text" [(ngModel)]="personne" name="personne"><br/>
+
+  <label>Pièce jointe:</label>
+  <input type="file" (change)="onFileSelected($event)"><br/><br/>
+
+  <button type="submit">Enregistrer</button>
+</form>

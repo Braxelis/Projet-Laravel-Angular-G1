@@ -1,0 +1,23 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Gestion des utilisateurs</h2>
+  <table class="table-auto w-full">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Rôle</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button (click)="deleteUser(user.id)" class="text-red-500">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
